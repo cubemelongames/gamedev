@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #fff;
+    background-color: #F7F7F7;
     color: #333;
     display: flex;
     justify-content: center;
@@ -15,27 +15,41 @@ body {
 }
 
 .sidebar {
-    display: none;
     flex: 1;
-    background-color: #2E003E;
-    color: #fff;
+    background-color: #2D2F3A;
+    color: #FFF;
     padding: 20px;
     border-radius: 12px;
     margin-right: 20px;
+    transition: all 0.3s ease;
 }
 
     .sidebar h3 {
         font-size: 1.5em;
         margin-bottom: 20px;
+        color: #FF6F61;
     }
+
+    .sidebar p {
+        margin: 10px 0;
+    }
+
+    .sidebar a {
+        color: #FF6F61;
+        text-decoration: none;
+    }
+
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
 
 .content {
     flex: 3;
 }
 
 .header {
-    background-color: #2E003E;
-    color: #fff;
+    background-color: #444654;
+    color: #FFF;
     text-align: center;
     padding: 50px 20px;
     border-radius: 12px;
@@ -50,16 +64,18 @@ body {
         font-family: 'Fredoka One', sans-serif;
         margin: 0;
         font-size: 2.5em;
+        color: #FF6F61;
     }
 
     .header h2 {
         margin: 10px 0;
         font-size: 1.5em;
+        color: #F7F7F7;
     }
 
 .about-me {
     background-color: #FF6F61;
-    color: #2E003E;
+    color: #2D2F3A;
     padding: 40px 20px;
     text-align: center;
     border-radius: 12px;
@@ -72,7 +88,7 @@ body {
     }
 
 .devlog-posts {
-    background: #f4f4f4;
+    background: #FFF;
     color: #333;
     padding: 40px 20px;
     text-align: center;
@@ -83,6 +99,7 @@ body {
     .devlog-posts h3 {
         font-size: 2em;
         margin-bottom: 20px;
+        color: #444654;
     }
 
 .post-container {
@@ -93,7 +110,7 @@ body {
 }
 
 .post-card {
-    background-color: #fff;
+    background-color: #F7F7F7;
     color: #333;
     padding: 20px;
     border-radius: 16px;
@@ -120,8 +137,8 @@ body {
 }
 
 footer {
-    background-color: #2E003E;
-    color: #fff;
+    background-color: #444654;
+    color: #FFF;
     text-align: center;
     padding: 20px;
     font-size: 0.9em;
@@ -129,13 +146,9 @@ footer {
     margin-top: 20px;
 }
 
-/* Sidebar for large screens */
-@media screen and (min-width: 600px) {
+/* Sidebar visibility for different screen sizes */
+@media screen and (max-width: 600px) {
     .sidebar {
-        display: block;
-    }
-
-    .content {
-        flex: 3;
+        display: none;
     }
 }
