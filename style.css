@@ -40,89 +40,44 @@ body {
         margin-bottom: 20px;
     }
 
-.projects {
-    background: linear-gradient(45deg, #A4E4A0, #2E8B57);
-    color: #fff;
+.devlog-posts {
+    background: #f4f4f4;
+    color: #333;
     padding: 40px 20px;
     text-align: center;
 }
 
-    .projects h3 {
+    .devlog-posts h3 {
         font-size: 2em;
         margin-bottom: 20px;
     }
 
-.project-grid {
+.post-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 20px;
-    flex-wrap: wrap;
+    align-items: center;
 }
 
-.project-card {
+.post-card {
     background-color: #fff;
     color: #333;
     padding: 20px;
     border-radius: 8px;
-    width: 250px;
+    width: 100%;
+    max-width: 600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s;
+    text-align: left;
 }
 
-    .project-card:hover {
-        transform: scale(1.05);
+    .post-card h4 {
+        margin-top: 0;
+        font-size: 1.5em;
     }
 
-.skills {
-    background-color: #f4f4f4;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-    .skills h3 {
-        font-size: 2em;
-        margin-bottom: 20px;
+    .post-card p {
+        margin: 10px 0;
     }
-
-.skills-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.skill {
-    text-align: center;
-    width: 100px;
-}
-
-    .skill img {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 10px;
-    }
-
-.contact {
-    background-color: #2E003E;
-    color: #fff;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-    .contact h3 {
-        font-size: 2em;
-        margin-bottom: 20px;
-    }
-
-    .contact a {
-        color: #FF6F61;
-        text-decoration: none;
-        margin: 0 10px;
-    }
-
-        .contact a:hover {
-            text-decoration: underline;
-        }
 
 footer {
     background-color: #2E003E;
