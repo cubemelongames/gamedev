@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #F7F7F7;
-    color: #333;
+    font-family: 'Montserrat', sans-serif; /* Font updated to Montserrat */
+    background-color: #1A1A1D; /* Dark background */
+    color: #EEEEEE; /* Light gray text */
     display: flex;
     justify-content: center;
 }
@@ -16,90 +18,78 @@ body {
 
 .sidebar {
     flex: 1;
-    background-color: #2D2F3A;
-    color: #FFF;
+    background-color: #6ec78e; /* Bright green for the sidebar */
+    color: #1A1A1D; /* Dark text */
     padding: 20px;
     border-radius: 12px;
     margin-right: 20px;
     transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
 }
 
-    .sidebar h3 {
-        font-size: 1.5em;
-        margin-bottom: 20px;
-        color: #FF6F61;
-    }
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-    .sidebar p {
-        margin: 10px 0;
-    }
+.logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+}
 
-    .sidebar a {
-        color: #FF6F61;
-        text-decoration: none;
-    }
+.sidebar h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    color: #1A1A1D; /* Dark color for titles */
+    margin-bottom: 10px;
+}
 
-        .sidebar a:hover {
-            text-decoration: underline;
-        }
+.sidebar h2 {
+    font-size: 1.2em;
+    color: #1A1A1D; /* Dark color for subtitle */
+    margin-bottom: 20px;
+}
+
+.sidebar h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #1A1A1D; /* Dark color for section titles */
+}
+
+.sidebar p {
+    margin: 10px 0;
+    color: #1A1A1D; /* Dark text */
+}
+
+.sidebar a {
+    color: #1A1A1D; /* Dark color for links */
+    text-decoration: none;
+}
+
+    .sidebar a:hover {
+        text-decoration: underline;
+    }
 
 .content {
     flex: 3;
 }
 
-.header {
-    background-color: #444654;
-    color: #FFF;
-    text-align: center;
-    padding: 50px 20px;
-    border-radius: 12px;
-}
-
-    .header .logo {
-        width: 150px;
-        margin-bottom: 20px;
-    }
-
-    .header h1 {
-        font-family: 'Fredoka One', sans-serif;
-        margin: 0;
-        font-size: 2.5em;
-        color: #FF6F61;
-    }
-
-    .header h2 {
-        margin: 10px 0;
-        font-size: 1.5em;
-        color: #F7F7F7;
-    }
-
-.about-me {
-    background-color: #FF6F61;
-    color: #2D2F3A;
-    padding: 40px 20px;
-    text-align: center;
-    border-radius: 12px;
-    margin-top: 20px;
-}
-
-    .about-me h3 {
-        font-size: 2em;
-        margin-bottom: 20px;
-    }
-
 .devlog-posts {
-    background: #FFF;
-    color: #333;
+    background: #6ec78e; /* Bright green for the posts container */
+    color: #1A1A1D; /* Dark text */
     padding: 40px 20px;
     text-align: center;
     border-radius: 12px;
     margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
 }
 
     .devlog-posts h3 {
         font-size: 2em;
         margin-bottom: 20px;
-        color: #444654;
+        color: #1A1A1D; /* Dark color for titles */
     }
 
 .post-container {
@@ -110,13 +100,13 @@ body {
 }
 
 .post-card {
-    background-color: #F7F7F7;
-    color: #333;
+    background-color: #6ec78e; /* Bright green for the post cards */
+    color: #1A1A1D; /* Dark text */
     padding: 20px;
     border-radius: 16px;
     width: 100%;
     max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
     text-align: left;
 }
 
@@ -130,25 +120,26 @@ body {
 .post-card h4 {
     margin-top: 0;
     font-size: 1.5em;
+    color: #1A1A1D; /* Dark color for post titles */
 }
 
 .post-card p {
     margin: 10px 0;
+    color: #1A1A1D; /* Dark text */
 }
 
-footer {
-    background-color: #444654;
-    color: #FFF;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9em;
-    border-radius: 12px;
-    margin-top: 20px;
-}
+/* Sidebar visibility and positioning for different screen sizes */
+@media screen and (max-width: 720px) {
+    .container {
+        flex-direction: column;
+    }
 
-/* Sidebar visibility for different screen sizes */
-@media screen and (max-width: 600px) {
     .sidebar {
-        display: none;
+        margin: 0 0 20px 0;
+        order: -1; /* Move the sidebar above the content */
+    }
+
+    .content {
+        order: 1;
     }
 }
