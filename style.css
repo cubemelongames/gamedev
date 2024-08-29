@@ -1,145 +1,93 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
-
+/* Apply the base styles from the original layout */
 body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif; /* Font updated to Montserrat */
-    background-color: #1A1A1D; /* Dark background */
-    color: #EEEEEE; /* Light gray text */
-    display: flex;
-    justify-content: center;
+    background-color: #f0f0f0;
+    font-family: 'Gudea', sans-serif;
+    font-size: 16px;
+    color: #111;
+    overflow-y: scroll;
 }
 
-.container {
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
-}
-
-.sidebar {
-    flex: 1;
-    background-color: #6ec78e; /* Bright green for the sidebar */
-    color: #1A1A1D; /* Dark text */
-    padding: 20px;
-    border-radius: 12px;
-    margin-right: 20px;
-    transition: all 0.3s ease;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
-}
-
-.logo-container {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.logo {
-    width: 100px;
-    display: block;
+#page {
+    width: 900px;
     margin: 0 auto;
+    padding-bottom: 50px;
 }
 
-.sidebar h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2em;
-    color: #1A1A1D; /* Dark color for titles */
-    margin-bottom: 10px;
+#header {
+    margin-top: 25px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #a0a0a0;
+    margin-bottom: 7px;
 }
 
-.sidebar h2 {
-    font-size: 1.2em;
-    color: #1A1A1D; /* Dark color for subtitle */
-    margin-bottom: 20px;
+#title {
+    font-size: 16pt;
+    font-weight: bold;
+    color: #405580;
 }
 
-.sidebar h3 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: #1A1A1D; /* Dark color for section titles */
+#social_media {
+    float: right;
+    margin-bottom: -5px;
 }
 
-.sidebar p {
-    margin: 10px 0;
-    color: #1A1A1D; /* Dark text */
+.social_ico {
+    width: 20px;
+    height: 20px;
+    opacity: 0.65;
+    margin-top: 4px;
+    margin-right: 10px;
 }
 
-.sidebar a {
-    color: #1A1A1D; /* Dark color for links */
-    text-decoration: none;
-}
-
-    .sidebar a:hover {
-        text-decoration: underline;
+    .social_ico:hover {
+        opacity: 0.8;
     }
 
-.content {
-    flex: 3;
+#content {
+    font-size: 14px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 60px;
 }
 
-.devlog-posts {
-    background: #6ec78e; /* Bright green for the posts container */
-    color: #1A1A1D; /* Dark text */
-    padding: 40px 20px;
-    text-align: center;
-    border-radius: 12px;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
-}
-
-    .devlog-posts h3 {
-        font-size: 2em;
-        margin-bottom: 20px;
-        color: #1A1A1D; /* Dark color for titles */
-    }
-
-.post-container {
+/* Portfolio item styling */
+.article-item {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row-reverse; /* Image always on the right */
     align-items: center;
-}
-
-.post-card {
-    background-color: #6ec78e; /* Bright green for the post cards */
-    color: #1A1A1D; /* Dark text */
     padding: 20px;
-    border-radius: 16px;
-    width: 100%;
-    max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
-    text-align: left;
+    border-bottom: 1px solid #AAA;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.post-image {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    margin-bottom: 15px;
-}
-
-.post-card h4 {
-    margin-top: 0;
-    font-size: 1.5em;
-    color: #1A1A1D; /* Dark color for post titles */
-}
-
-.post-card p {
-    margin: 10px 0;
-    color: #1A1A1D; /* Dark text */
-}
-
-/* Sidebar visibility and positioning for different screen sizes */
-@media screen and (max-width: 720px) {
-    .container {
-        flex-direction: column;
+    .article-item:hover {
+        transform: translateY(-5px);
     }
 
-    .sidebar {
-        margin: 0 0 20px 0;
-        order: -1; /* Move the sidebar above the content */
+    .article-item img, .article-item iframe {
+        width: 40%;
+        height: auto;
+        margin-left: 20px;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .content {
-        order: 1;
+    .article-item h2 {
+        font-size: 18px;
+        color: #357671; /* Green color used for headings */
+        margin-bottom: 10px;
     }
+
+    .article-item p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #111;
+    }
+
+/* Green color used in other parts of the page */
+#menu li:not(.active):hover,
+h1,
+h2 {
+    color: #357671;
 }

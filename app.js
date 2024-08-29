@@ -2,25 +2,57 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('posts.json')
         .then(response => response.json())
         .then(posts => {
-            const postContainer = document.getElementById('post-container');
+            const contentContainer = document.getElementById('content');
 
             posts.forEach(post => {
-                const postCard = document.createElement('div');
-                postCard.className = 'post-card';
+                // Create article element
+                const article = document.createElement('article');
+                article.className = 'article-item';
 
-                postCard.innerHTML = `
-                    <img src="${post.image}" alt="${post.title} Image" class="post-image">
-                    <h4>${post.title}</h4>
-                    <p><strong>Date:</strong> ${post.date}</p>
-                    <p>${post.content}</p>
-                `;
+                // Create text div
+                const textDiv = document.createElement('div');
+                textDiv.innerHTML = `<p>${post.text}</p>`;
 
-                postContainer.appendChild(postCard);
+                // Create media element (image or iframe)
+                let mediaElement;
+                if (post.media.type === 'image') {
+                    mediaElement = document.createElement('img');
+                    mediaElement.src = post.media.src;
+                    mediaElement.alt = post.media.alt;
+                } else if (post.media.type === 'iframe') {
+                    mediaElement = document.createElement('iframe');
+                    mediaElement.src = post.media.src;
+                    mediaElement.setAttribute('frameborder', '0');
+                    mediaElement.setAttribute('allowfullscreen', 'true');
+                }
+
+                // Add event listener for opening the detailed view
+                article.addEventListener('click', () => {
+                    // Create a modal or detailed view here to show post.html content
+                    showDetailedPost(post.html);
+                });
+
+                // Append elements to article
+                article.appendChild(mediaElement);
+                article.appendChild(textDiv);
+                contentContainer.appendChild(article);
             });
         })
         .catch(error => {
             console.error('Error loading posts:', error);
-            const postContainer = document.getElementById('post-container');
-            postContainer.innerHTML = '<p>Error loading posts. Please try again later.</p>';
         });
 });
+
+function showDetailedPost(htmlContent) {
+    // Implement a modal or detailed view to display the htmlContent
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = htmlContent;
+
+    // Add a close button or click event to close the modal
+    modal.addEventListener('click', () => {
+        modal.remove();
+    });
+
+    document.body.appendChild(modal);
+}
