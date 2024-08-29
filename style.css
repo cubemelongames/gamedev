@@ -88,10 +88,10 @@ body {
     .article-item img, .article-item iframe {
         width: 266px;
         height: 150px;
-        object-fit: cover;
         margin-left: 20px;
         border-radius: 4px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        object-fit: cover; /* Ensures the image/iframe fits within the specified size */
     }
 
     .article-item div {
