@@ -14,12 +14,31 @@ body {
 }
 
 #header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 25px;
     padding-bottom: 4px;
     border-bottom: 1px solid #a0a0a0;
-    margin-bottom: 7px;
+    margin-bottom: 20px;
 }
 
+#logo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between logo and company name */
+}
+
+#logo {
+    width: 50px;
+    height: auto;
+}
+
+#company-name {
+    font-size: 24px;
+    color: #405580;
+    font-weight: bold;
+}
 #title {
     font-size: 16pt;
     font-weight: bold;
@@ -51,9 +70,10 @@ body {
 }
 
 /* Portfolio item styling */
+/* Portfolio item styling */
 .article-item {
     display: flex;
-    flex-direction: row-reverse; /* Image always on the right */
+    flex-direction: row-reverse; /* Media always on the right */
     align-items: center;
     padding: 20px;
     border-bottom: 1px solid #AAA;
@@ -66,11 +86,16 @@ body {
     }
 
     .article-item img, .article-item iframe {
-        width: 40%;
-        height: auto;
+        width: 266px;
+        height: 150px;
+        object-fit: cover;
         margin-left: 20px;
         border-radius: 4px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .article-item div {
+        flex-grow: 1; /* Allow text to take remaining space */
     }
 
     .article-item h2 {
@@ -90,4 +115,29 @@ body {
 h1,
 h2 {
     color: #357671;
+}
+@media screen and (max-width: 720px) {
+    #page {
+        width: 100%; /* Make the page take full width */
+        padding: 0 10px; /* Add padding for small screen margins */
+    }
+
+    .article-item {
+        flex-direction: column; /* Stack media on top of text */
+        align-items: center; /* Center align both media and text */
+        text-align: center; /* Center text content */
+    }
+
+        .article-item img, .article-item iframe {
+            margin-left: 0; /* Remove left margin */
+            margin-bottom: 20px; /* Add margin below media */
+            width: 100%; /* Make media take full width */
+            max-width: 266px; /* Maintain aspect ratio by limiting max width */
+            height: auto; /* Allow height to adjust based on width */
+        }
+
+        .article-item div {
+            width: 100%; /* Make text take full width */
+            max-width: 600px; /* Set a max width for better readability */
+        }
 }
