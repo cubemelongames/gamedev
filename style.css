@@ -8,11 +8,12 @@ body {
 }
 
 #page {
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
     margin: 0 auto;
     padding-bottom: 50px;
+    box-sizing: border-box;
 }
-
 #header {
     display: flex;
     justify-content: center;
@@ -20,7 +21,7 @@ body {
     margin-top: 25px;
     padding-bottom: 4px;
     border-bottom: 1px solid #a0a0a0;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #logo-container {
@@ -39,6 +40,7 @@ body {
     color: #405580;
     font-weight: bold;
 }
+
 #title {
     font-size: 16pt;
     font-weight: bold;
@@ -62,11 +64,11 @@ body {
         opacity: 0.8;
     }
 
+
 #content {
     font-size: 14px;
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-right: 60px;
+    margin-top: 20px; /* Add space below the top bar */
+    padding: 0 20px; /* Ensure padding on smaller screens */
 }
 
 /* Portfolio item styling */
@@ -139,5 +141,47 @@ h2 {
         .article-item div {
             width: 100%; /* Make text take full width */
             max-width: 600px; /* Set a max width for better readability */
+        }
+}
+/* Top Bar with Links Below the Logo */
+#top-bar {
+    width: 100%;
+    background-color: #6ec78e; /* Green color */
+    color: #000; /* Default text color black */
+    padding: 10px 0;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+    #top-bar a {
+        color: #000; /* Default link text color black */
+        margin: 5px 10px; /* Add margin to space out links */
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 15px;
+        border-radius: 4px;
+        background-color: #76d1a1; /* Light green background box */
+        transition: background-color 0.3s ease, color 0.3s ease;
+        display: inline-block;
+    }
+
+        #top-bar a:hover {
+            background-color: #1a5730; /* Dark green on hover */
+            color: #fff; /* White text color on hover */
+        }
+
+/* Responsive Adjustments for Small Screens */
+@media screen and (max-width: 720px) {
+    #top-bar {
+        padding: 10px 20px; /* Add padding to prevent overflow */
+        text-align: center;
+    }
+
+        #top-bar a {
+            display: block; /* Stack links vertically on smaller screens */
+            margin: 10px 0; /* Add margin between stacked links */
+            width: 100%; /* Make links take full width */
+            box-sizing: border-box; /* Ensure padding is included in width */
         }
 }
