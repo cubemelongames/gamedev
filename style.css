@@ -1,4 +1,4 @@
-/* Apply the base styles from the original layout */
+/* General styles */
 body {
     background-color: #f0f0f0;
     font-family: 'Gudea', sans-serif;
@@ -14,6 +14,7 @@ body {
     padding-bottom: 50px;
     box-sizing: border-box;
 }
+
 #header {
     display: flex;
     justify-content: center;
@@ -41,113 +42,11 @@ body {
     font-weight: bold;
 }
 
-#title {
-    font-size: 16pt;
-    font-weight: bold;
-    color: #405580;
-}
-
-#social_media {
-    float: right;
-    margin-bottom: -5px;
-}
-
-.social_ico {
-    width: 20px;
-    height: 20px;
-    opacity: 0.65;
-    margin-top: 4px;
-    margin-right: 10px;
-}
-
-    .social_ico:hover {
-        opacity: 0.8;
-    }
-
-
-#content {
-    font-size: 14px;
-    margin-top: 20px; /* Add space below the top bar */
-    padding: 0 20px; /* Ensure padding on smaller screens */
-}
-
-/* Portfolio item styling */
-/* Portfolio item styling */
-.article-item {
-    display: flex;
-    flex-direction: row-reverse; /* Media always on the right */
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #AAA;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-    .article-item:hover {
-        transform: translateY(-5px);
-    }
-
-    .article-item img, .article-item iframe {
-        width: 266px;
-        height: 150px;
-        margin-left: 20px;
-        border-radius: 4px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        object-fit: cover; /* Ensures the image/iframe fits within the specified size */
-    }
-
-    .article-item div {
-        flex-grow: 1; /* Allow text to take remaining space */
-    }
-
-    .article-item h2 {
-        font-size: 18px;
-        color: #357671; /* Green color used for headings */
-        margin-bottom: 10px;
-    }
-
-    .article-item p {
-        font-size: 14px;
-        line-height: 1.5;
-        color: #111;
-    }
-
-/* Green color used in other parts of the page */
-#menu li:not(.active):hover,
-h1,
-h2 {
-    color: #357671;
-}
-@media screen and (max-width: 720px) {
-    #page {
-        width: 100%; /* Make the page take full width */
-        padding: 0 10px; /* Add padding for small screen margins */
-    }
-
-    .article-item {
-        flex-direction: column; /* Stack media on top of text */
-        align-items: center; /* Center align both media and text */
-        text-align: center; /* Center text content */
-    }
-
-        .article-item img, .article-item iframe {
-            margin-left: 0; /* Remove left margin */
-            margin-bottom: 20px; /* Add margin below media */
-            width: 100%; /* Make media take full width */
-            max-width: 266px; /* Maintain aspect ratio by limiting max width */
-            height: auto; /* Allow height to adjust based on width */
-        }
-
-        .article-item div {
-            width: 100%; /* Make text take full width */
-            max-width: 600px; /* Set a max width for better readability */
-        }
-}
-/* Top Bar with Links Below the Logo */
+/* Top Bar with Links */
 #top-bar {
     width: 100%;
     background-color: #6ec78e; /* Green color */
-    color: #000; /* Default text color black */
+    color: #000; /* Default link text color black */
     padding: 10px 0;
     text-align: center;
     font-size: 16px;
@@ -171,17 +70,62 @@ h2 {
             color: #fff; /* White text color on hover */
         }
 
-/* Responsive Adjustments for Small Screens */
-@media screen and (max-width: 720px) {
-    #top-bar {
-        padding: 10px 20px; /* Add padding to prevent overflow */
-        text-align: center;
+/* Article List */
+.article-item {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 30px; /* Increase padding to make articles taller */
+    border-bottom: 1px solid #AAA;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    min-height: 225px; /* Ensure a minimum height for articles */
+}
+
+    .article-item:hover {
+        transform: translateY(-5px);
     }
 
-        #top-bar a {
-            display: block; /* Stack links vertically on smaller screens */
-            margin: 10px 0; /* Add margin between stacked links */
-            width: 100%; /* Make links take full width */
-            box-sizing: border-box; /* Ensure padding is included in width */
+/* About Me Section */
+#about {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #76d1a1; /* Light green background */
+    border-radius: 8px;
+}
+
+    #about h2 {
+        font-size: 24px;
+        color: #1a5730;
+        margin-bottom: 10px;
+    }
+
+    #about p {
+        font-size: 16px;
+        color: #111;
+        line-height: 1.6;
+    }
+
+/* Detailed Article View */
+#article-detail {
+    padding: 20px;
+}
+
+    #article-detail button {
+        background-color: #76d1a1;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+
+        #article-detail button:hover {
+            background-color: #1a5730;
         }
+
+/* Hide the article detail initially */
+#article-detail {
+    display: none;
 }

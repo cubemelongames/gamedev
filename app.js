@@ -1,58 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('posts.json')
-        .then(response => response.json())
-        .then(posts => {
-            const contentContainer = document.getElementById('content');
+    // This function shows the detailed article view
+    function showDetailedPost(postUrl) {
+        const articleList = document.getElementById('article-list');
+        const articleDetail = document.getElementById('article-detail');
+        const articleContent = document.getElementById('article-content');
 
-            posts.forEach(post => {
-                // Create article element
-                const article = document.createElement('article');
-                article.className = 'article-item';
+        // Load the content from the external file into the article content div
+        fetch(postUrl)
+            .then(response => response.text())
+            .then(data => {
+                articleContent.innerHTML = data;
+                articleList.style.display = 'none';
+                articleDetail.style.display = 'block';
+            })
+            .catch(error => console.error('Error loading article:', error));
+    }
 
-                // Create text div
-                const textDiv = document.createElement('div');
-                textDiv.innerHTML = `<p>${post.text}</p>`;
+    // This function shows the article list
+    function showArticleList() {
+        const articleList = document.getElementById('article-list');
+        const articleDetail = document.getElementById('article-detail');
 
-                // Create media element (image or iframe)
-                let mediaElement;
-                if (post.media.type === 'image') {
-                    mediaElement = document.createElement('img');
-                    mediaElement.src = post.media.src;
-                    mediaElement.alt = post.media.alt;
-                } else if (post.media.type === 'iframe') {
-                    mediaElement = document.createElement('iframe');
-                    mediaElement.src = post.media.src;
-                    mediaElement.setAttribute('frameborder', '0');
-                    mediaElement.setAttribute('allowfullscreen', 'true');
-                }
+        articleDetail.style.display = 'none';
+        articleList.style.display = 'block';
+    }
 
-                // Add event listener for opening the detailed view
-                article.addEventListener('click', () => {
-                    // Create a modal or detailed view here to show post.html content
-                    showDetailedPost(post.html);
-                });
-
-                // Append elements to article
-                article.appendChild(mediaElement);
-                article.appendChild(textDiv);
-                contentContainer.appendChild(article);
-            });
-        })
-        .catch(error => {
-            console.error('Error loading posts:', error);
-        });
+    // Add event listeners for showing and hiding articles
+    window.showDetailedPost = showDetailedPost;
+    window.showArticleList = showArticleList;
 });
 
-function showDetailedPost(htmlContent) {
-    // Implement a modal or detailed view to display the htmlContent
-    const modal = document.createElement('div');
-    modal.className = 'modal';
-    modal.innerHTML = htmlContent;
+window.showDetailedPost = function (postUrl) {
+    const articleList = document.getElementById('article-list');
+    const articleDetail = document.getElementById('article-detail');
+    const articleContent = document.getElementById('article-content');
 
-    // Add a close button or click event to close the modal
-    modal.addEventListener('click', () => {
-        modal.remove();
-    });
+    // Load the content from the external file into the article content div
+    fetch(postUrl)
+        .then(response => response.text())
+        .then(data => {
+            articleContent.innerHTML = data;
+            articleList.style.display = 'none';
+            articleDetail.style.display = 'block';
+        })
+        .catch(error => console.error('Error loading article:', error));
+};
 
-    document.body.appendChild(modal);
-}
+window.showArticleList = function () {
+    const articleList = document.getElementById('article-list');
+    const articleDetail = document.getElementById('article-detail');
+
+    articleDetail.style.display = 'none';
+    articleList.style.display = 'block';
+};

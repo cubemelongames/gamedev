@@ -6,6 +6,7 @@
     <title>Cube Melon Games Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="page">
         <!-- Header Section -->
@@ -18,117 +19,47 @@
 
         <!-- Top Bar with Links -->
         <div id="top-bar">
-            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
             <a href="#portfolio">Portfolio</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="https://www.youtube.com/channel/UCXWkRiOdTaPMBC4GL7PdHcQ">YouTube</a>
+            <a href="https://x.com/cubemelongames">Twitter</a>
+            <a href="https://sketchfab.com/cubemelongames">Sketchfab</a>
+            <a href="https://assetstore.unity.com/publishers/28516?srsltid=AfmBOoonazVnMmU8HJPIPM8fXMzkp5721wOTb9gGwkHpgojdWRxOWrgM">Unity Asset Store</a>
         </div>
 
-        <!-- Content Section -->
-        <div id="content">
-            <!-- Media 1 -->
-            <article class="article-item">
+        <!-- About Me Section -->
+        <div id="about">
+            <h2>About Me</h2>
+            <p>
+                I'm an indie game developer with a passion for creating unique and engaging experiences.
+                With a background in programming and design, I focus on bringing imaginative ideas to life
+                through stylized 3D art and innovative game mechanics. Welcome to my portfolio!
+            </p>
+        </div>
+
+        <!-- Article List Section -->
+        <div id="article-list">
+            <!-- Media Articles -->
+            <article class="article-item" onclick="showDetailedPost('post1.html')">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/VLc85ta1ywM?si=HkS8r9zSlsSQX7Uu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div>
                     <h2>Unity Editor Tutorial</h2>
                     <p>A video tutorial explaining essential Unity Editor features for beginners and intermediate users, providing tips for efficient game development.</p>
                 </div>
             </article>
+            <!-- Add more articles similarly -->
+        </div>
 
-            <!-- Media 2 -->
-            <article class="article-item">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/5prN35lcnqo?si=lOtTdzMu_6VSqCou" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div>
-                    <h2>Unity Game Development Tips</h2>
-                    <p>A video that offers practical advice and techniques for enhancing your game development workflow in Unity.</p>
-                </div>
-            </article>
-
-            <!-- Media 3 -->
-            <article class="article-item">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/PQqcEIQuUSs?si=JEXa9HwZinLH9Lse" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div>
-                    <h2>Advanced Unity Editor Techniques</h2>
-                    <p>This video explores advanced techniques within the Unity Editor, focusing on optimization and customization.</p>
-                </div>
-            </article>
-
-            <!-- Media 4 -->
-            <article class="article-item">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/ZTE0o5cD160?si=SVZcZ3nzGJN0Ba_t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div>
-                    <h2>Unity Editor Customization</h2>
-                    <p>A video demonstrating how to customize the Unity Editor to suit your specific game development needs.</p>
-                </div>
-            </article>
-
-            <!-- Media 5 -->
-            <article class="article-item">
-                <div class="sketchfab-embed-wrapper">
-                    <iframe title="low poly desert village" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/2639191809c4426f8cc0a532ccf8506b/embed"></iframe>
-                </div>
-                <div>
-                    <h2>Low Poly Desert Village</h2>
-                    <p>A 3D model showcasing a low-poly desert village, ideal for game environments with a stylized aesthetic.</p>
-                </div>
-            </article>
-
-            <!-- Media 6 -->
-            <article class="article-item">
-                <div class="sketchfab-embed-wrapper">
-                    <iframe title="Little game town" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/6c223e9974944a8988f39087121df79e/embed"></iframe>
-                </div>
-                <div>
-                    <h2>Little Game Town</h2>
-                    <p>A 3D model of a small, detailed town designed in a low-poly style, perfect for casual and indie games.</p>
-                </div>
-            </article>
-
-            <!-- Media 7 -->
-            <article class="article-item">
-                <div class="sketchfab-embed-wrapper">
-                    <iframe title="The Grappler mech (game asset )" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/5e2ad365904243b19b81a966417ac0f3/embed"></iframe>
-                </div>
-                <div>
-                    <h2>The Grappler Mech (Game Asset)</h2>
-                    <p>A 3D model of a grappler mech, designed as a game asset for sci-fi or mech-themed projects.</p>
-                </div>
-            </article>
-
-            <!-- Media 8 -->
-            <article class="article-item">
-                <div class="sketchfab-embed-wrapper">
-                    <iframe title="15 chibii characters" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/0b6e93a3bb72483584ce2321b3913ed1/embed"></iframe>
-                </div>
-                <div>
-                    <h2>15 Chibi Characters</h2>
-                    <p>A collection of 15 stylized chibi characters, ideal for use in games or animations requiring cute, cartoonish models.</p>
-                </div>
-            </article>
-
-            <!-- Media 9 -->
-            <article class="article-item">
-                <div class="sketchfab-embed-wrapper">
-                    <iframe title="Octo Alien" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/4c2eec983f70492e9655f06aced430ea/embed"></iframe>
-                </div>
-                <div>
-                    <h2>Octo Alien</h2>
-                    <p>A unique 3D model of an octopus-like alien character, suitable for sci-fi or fantasy games.</p>
-                </div>
-            </article>
-
-            <!-- Media 10 -->
-            <article class="article-item">
-                <div class="sketchfab-embed-wrapper">
-                    <iframe title="chibi character in suit Walking" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/ee72db7eb0c343b59aefa507eb7d3e2f/embed"></iframe>
-                </div>
-                <div>
-                    <h2>Chibi Character in Suit Walking</h2>
-                    <p>A 3D animation of a chibi character walking, wearing a suit, suitable for various game scenarios or animations.</p>
-                </div>
-            </article>
+        <!-- Detailed Article View -->
+        <div id="article-detail" style="display: none;">
+            <button onclick="showArticleList()">Back to Articles</button>
+            <div id="article-content">
+                <!-- Detailed article content will be loaded here -->
+            </div>
         </div>
     </div>
+
+    <script src="app.js"></script>
 </body>
 
 </html>
